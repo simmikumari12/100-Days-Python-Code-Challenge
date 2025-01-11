@@ -25,7 +25,7 @@ class Calculator:
     
     def exponent(self, b):
         return self ** b
- 
+     
 if len(sys.argv) > 4:
     print("Too many arguments")
     sys.exit()
