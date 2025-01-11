@@ -68,7 +68,11 @@ def main():
     
 if __name__ == "__main__":
    main()
-    
+
+#  To check why 
+# python3 calculator.py 2 ** 5 and
+# python3 calculator.py 2 * 5
+# giving Too many arguments
     
     
     
