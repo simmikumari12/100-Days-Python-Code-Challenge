@@ -7,3 +7,6 @@ print("dimes:",dimes)
 
 nickels = (cents - quarters * 25 - dimes * 10)//5
 print("nickels:",nickels)
+
+pennies = (cents - quarters * 25 - dimes * 10 - nickels * 5)//5
+print("pennies:",pennies)
