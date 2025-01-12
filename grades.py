@@ -26,3 +26,6 @@ print(f"{num_students} Students took the exam.")
 print(f"The highest grade was: {max(grades)}")
 print(f"The lowest grade was: {min(grades)}")
 print(f"The average grade was: {sum(grades)/num_students}")
+
+day1 = ["Mary", "Jake", "Sam", "Alex", 'Percy', "Jessica", "Trent", "Mahmoud"]
+day2 = ["Jake", "Sam", "Alex", "Percy", "Mahmoud", "Trent", "Caleb", "Zayne"]
