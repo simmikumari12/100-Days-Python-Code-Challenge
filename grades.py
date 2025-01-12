@@ -1,4 +1,4 @@
-from math import average
+# from math import average
 """
 For your second program in today’s lab, you will need to write a program that stores student’s exam grades as a list and student 
 attendance as a set. 
@@ -21,7 +21,8 @@ Report any floating-point values to 1 decimal place.
 """
 
 grades = [83, 85, 72, 65, 76, 90, 79, 88, 93, 70, 67, 80]
-print(f"{len(grades)} Students took the exam.")
+num_students =len(grades)
+print(f"{num_students} Students took the exam.")
 print(f"The highest grade was: {max(grades)}")
 print(f"The lowest grade was: {min(grades)}")
-print(f"The average grade was: {average(grades)}")
+print(f"The average grade was: {sum(grades)/num_students}")
