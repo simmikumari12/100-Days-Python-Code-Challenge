@@ -13,6 +13,7 @@ while weight <= 0:
         weight = int(input("Weight = "))     
     except:
         pass
+    
 heart_rate = int(input("Heart Rate = "))
 time = int(input("Time = "))
 
