@@ -30,4 +30,4 @@ s = (a + b + c) / 2
 print(s)
 
 area = (s * (s-a) * (s-b) * (s-c))**(1/2)
-print(area)
+print(f"Area of the given triangle = {area:0.3f}")
