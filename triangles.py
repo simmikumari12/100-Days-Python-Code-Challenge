@@ -40,7 +40,6 @@ elif a < c:
     longest = c
 else:
     longest = a
-print(longest)
 
 if a == longest:
     right_hand_side = c * c + b * b 
