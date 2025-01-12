@@ -20,12 +20,29 @@ c. Who attended only one day of class?
 Report any floating-point values to 1 decimal place.
 """
 
-grades = [83, 85, 72, 65, 76, 90, 79, 88, 93, 70, 67, 80]
-num_students =len(grades)
-print(f"{num_students} Students took the exam.")
-print(f"The highest grade was: {max(grades)}")
-print(f"The lowest grade was: {min(grades)}")
-print(f"The average grade was: {sum(grades)/num_students}")
+# grades = [83, 85, 72, 65, 76, 90, 79, 88, 93, 70, 67, 80]
+# num_students =len(grades)
+# print(f"{num_students} Students took the exam.")
+# print(f"The highest grade was: {max(grades)}")
+# print(f"The lowest grade was: {min(grades)}")
+# print(f"The average grade was: {sum(grades)/num_students}")
 
 day1 = ["Mary", "Jake", "Sam", "Alex", 'Percy', "Jessica", "Trent", "Mahmoud"]
 day2 = ["Jake", "Sam", "Alex", "Percy", "Mahmoud", "Trent", "Caleb", "Zayne"]
+
+student = []
+students_both_day = []
+
+for s in day1:
+    if s in day2:
+        students_both_day.append(s)
+        student.append(s) # students present in both first and second days
+    
+    if s not in day2:
+        student.append(s) # students present only on first day
+
+for t in day2:
+    if t not in day1:
+        student.append(t) # students present only on day2
+print(f"{students_both_day} attended both class days")
+print(f"{len(student)} students attended the class")
