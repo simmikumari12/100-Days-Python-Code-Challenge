@@ -1,4 +1,5 @@
 import sys
+
 if len(sys.argv) > 4:
     print("Too many Arguments!")
     sys.exit()
@@ -27,7 +28,16 @@ if b + c <= a:
 
 
 s = (a + b + c) / 2
-print(s)
+print(f"\nPerimeter = {s * 2} sq units")
 
 area = (s * (s-a) * (s-b) * (s-c))**(1/2)
-print(f"Area of the given triangle = {area:0.3f}")
+print(f"Area = {area:0.3f} sq unit\n")
+
+right_hand_side = a * a + b * b 
+left_hand_side = c * c
+if right_hand_side == left_hand_side:
+    print("Right Triangle")
+elif right_hand_side < left_hand_side:
+    print("Obtuse Triangle")
+else:
+    print("Acute Triangle")
