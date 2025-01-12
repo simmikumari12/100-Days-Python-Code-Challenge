@@ -10,12 +10,15 @@ if len(sys.argv) < 4:
 x = sys.argv[1]
 y = sys.argv[2]
 z = sys.argv[3]
+
 try:
     a = int(x)
     b = int(y)
     c = int(z)
 except ValueError:
     print("Invalid Input")
+    sys.exit()
+    
 if a + b <= c:
     print("Invalid length")
     sys.exit()
