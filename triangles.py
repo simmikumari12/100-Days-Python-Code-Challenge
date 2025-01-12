@@ -33,8 +33,23 @@ print(f"\nPerimeter = {s * 2} sq units")
 area = (s * (s-a) * (s-b) * (s-c))**(1/2)
 print(f"Area = {area:0.3f} sq unit\n")
 
-right_hand_side = a * a + b * b 
-left_hand_side = c * c
+longest = a
+if  a < b:
+    longest = b
+elif a < c:
+    longest = c
+else:
+    longest = a
+print(longest)
+
+if a == longest:
+    right_hand_side = c * c + b * b 
+elif b == longest:
+    right_hand_side = a * a + c * c
+else: 
+    right_hand_side = a * a + b * b 
+    
+left_hand_side = longest * longest
 if right_hand_side == left_hand_side:
     print("Right Triangle")
 elif right_hand_side < left_hand_side:
