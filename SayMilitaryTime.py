@@ -33,8 +33,7 @@ def main():
         print("Invalid 1st command line argument. Hours cannot be more than 23.")
         sys.exit()
 
-    m_time_in_words = convert_hours(hours) + convert_minutes(minutes)
-    print(m_time_in_words) 
+    print(time(hours, minutes))
 
 def convert_minutes(minutes):
     min_dict = {
@@ -99,7 +98,7 @@ def convert_minutes(minutes):
         59: "FIFTY NINE",
         60: "SIXTY"
     }
-    print(min_dict[minutes])
+    return min_dict[minutes]
 
 def convert_hours(hours):
     hour_dict = {
@@ -128,8 +127,14 @@ def convert_hours(hours):
         23: "TWENTY THREE",
         24: "TWENTY FOUR"
     }
-    print(hour_dict[hours])
-	
+    return hour_dict[hours]
+
+def time(h, t):
+    if h < 10:
+        return f"ZERO {convert_hours(h)} {convert_minutes(t)}"
+    else:
+        return f"{convert_hours(h)} HUNDRED {convert_minutes(t)} HOURS"
+
 if __name__ == "__main__":
     main()
 	
