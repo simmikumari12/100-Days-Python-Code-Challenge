@@ -1,17 +1,2 @@
-password = input("Please Enter Your Password: ")
-for character in password:
-    if character == 'o':
-        character = 0       
-    elif character == 'i':
-        character = 1
-    elif  character == 'e':
-        character = 3
-    elif character == 'A':
-        character = 4
-    elif  character == 'B':
-        character = 8
-    elif  character == 's':
-        character = '$'
-    print(character,end="")
-print(password)
-print("\n")
+password = input("Please Enter Your Password: ").replace("o", "0").replace("i", "1").replace("e", "3").replace("A", "4").replace("B", "8").replace("s", "$")
+print(f"Your new strong password is: {password}!")
