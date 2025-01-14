@@ -4,10 +4,11 @@ def main():
     option_row_one = ["A:India", "B:Australlia"]
     option_row_two = ["C:New Zealand", "D:England"]
     for option in option_row_one:
-        print(option, end=" ")
+        print(option.center(40), end=" ")
     print("\n")
     for option in option_row_two:
-        print(option, end=" ")
+        print(option.center(40), end=" ")
+    print("\n")
 
 
 if __name__ == "__main__":
