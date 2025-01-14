@@ -5,7 +5,7 @@ def main():
     option_row_two = ["C: New Zealand", "D: England"]
     for option in option_row_one:
 
-        print(option)
+        print(option, end="")
     print(option_row_two)
 
 if __name__ == "__main__":
