@@ -5,20 +5,21 @@ def main():
     option_row_one = ["A:India", "B:Australlia"]
     option_row_two = ["C:New Zealand", "D:England"]
 
-    questions = ["1: In 2022, which team became the first to score more than 500 runs on the first day of Test Match?",
-                "2: Which of the following countries is the world's largest producer of saffron?",
-                "3: Which god is also known as ‘Gauri Nandan’?",
-                "4: What does not grow on tree according to a popular Hindi saying?",
-                "5: Which city is known as the Pink City of India?",
-                "6: Who wrote India's National Anthem?",
-                "7: How many major religions are there in India?",
-                "8: When is the National Hindi Diwas celebrated?",
-                "9: Which country is the largest producer of coffee in the world?",
-                "10: Where is India Gate located?",
-                ]
+    questions = {"England": "1: In 2022, which team became the first to score more than 500 runs on the first day of Test Match?",
+                "2: Which of the following countries is the world's largest producer of saffron?": "Iran",
+                "3: Which god is also known as ‘Gauri Nandan’?": "Ganesha",
+                "4: What does not grow on tree according to a popular Hindi saying?": " Money",
+                "5: Which city is known as the Pink City of India?": "Jaipur",
+                "6: Who wrote India's National Anthem?": "Rabindranath Tagore",
+                "7: How many major religions are there in India?": "6",
+                "8: When is the National Hindi Diwas celebrated?": "14 September",
+                "9: Which country is the largest producer of coffee in the world?": "Brazil",
+                "10: Where is India Gate located?": "New Delhi",
+                }
     for question in questions:
         print(question)
-        if answer is True:
+        answer = input()
+        if questions[answer] == question:
             continue
         else:
             break
