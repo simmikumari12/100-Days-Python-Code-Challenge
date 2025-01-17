@@ -25,8 +25,10 @@ def decode(msg):
     if len(msg) <= 3:
         return f"{msg[::-1]}"
     elif len(msg) > 3:
-        m = msg[4:len(msg)-3]
-        print(m)
+        m = msg[4:len(msg)-3] 
+        last_word = m[len(m)-1]
+        return f"DeCoded Message: {last_word}{m}"
+
     
 
 
