@@ -13,24 +13,24 @@ def main():
                 "10: Where is India Gate located?": ["A:Agra","B:Punjab","C:Mumbai","D:New Delhi"],
                 }
     i = 0
-    amt = 0
+    amt = 1000
     answers = {1:"D", 2:"B", 3:"D",4:"A", 5:"C", 6:"A", 7:"A", 8:"B", 9:"A", 10:"D"}
     try:
         for question in questions:  
             print(question) 
-            print(questions[question]) #prints option
+            print(questions[question])
             i = i + 1
             user_answer = input("").upper() 
             if user_answer == answers[i]:
                 amt = amt + 2000
                 print(f"Next Question for {amt}")
                 continue
-            elif user_answer == "quit":
-                print(f"Amount you are taking home: {amt}")
+            elif user_answer == "QUIT":
+                print(f"Amount you are taking home: {amt-2000}")
                 sys.exit()
             else:
                 print("Wrong Answer!")
-                print(f"Amount you are taking home: {amt}")
+                print(f"Amount you are taking home: {amt-2000}")
                 sys.exit()
     except KeyboardInterrupt:
         sys.exit()
