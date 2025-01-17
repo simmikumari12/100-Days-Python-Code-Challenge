@@ -1,37 +1,29 @@
 #create a program to display questions to the user like KBC.
 import sys
 def main():
-    print("\nIn 2022, which team became the first to score more than 500 runs on the first day of Test Match?\n")
-    option_row_one = ["A:India", "B:Australlia"]
-    option_row_two = ["C:New Zealand", "D:England"]
-
-    questions = {"England": "1: In 2022, which team became the first to score more than 500 runs on the first day of Test Match?",
-                "2: Which of the following countries is the world's largest producer of saffron?": "Iran",
-                "3: Which god is also known as ‘Gauri Nandan’?": "Ganesha",
-                "4: What does not grow on tree according to a popular Hindi saying?": " Money",
-                "5: Which city is known as the Pink City of India?": "Jaipur",
-                "6: Who wrote India's National Anthem?": "Rabindranath Tagore",
-                "7: How many major religions are there in India?": "6",
-                "8: When is the National Hindi Diwas celebrated?": "14 September",
-                "9: Which country is the largest producer of coffee in the world?": "Brazil",
-                "10: Where is India Gate located?": "New Delhi",
+    questions = {"1: In 2022, which team became the first to score more than 500 runs on the first day of Test Match?": ["A:India", "B:Australlia", "C:New Zealand", "D:England"],
+                "2: Which of the following countries is the world's largest producer of saffron?": ["A:Spain","B:Iran", "C:India" "D:Greece"],
+                "3: Which god is also known as ‘Gauri Nandan’?": ["A:Agni","B:Indra","C.Hanuman","D:Ganesha"],
+                "4: What does not grow on tree according to a popular Hindi saying?": ["A:Money","B:Flowers","C:Leaves","D:Fruits"],
+                "5: Which city is known as the Pink City of India?": ["A:Banglore","B:Maysore","C:Jaipur", "D:Kochi"],
+                "6: Who wrote India's National Anthem?": ["A:Rabindranath Tagore","B:Lal Bahadur Shastri", "C:Chetan Bhagat", "D:RK Narayan"],
+                "7: How many major religions are there in India?": ["A:6", "B:7", "C:8", "D:9"],
+                "8: When is the National Hindi Diwas celebrated?": ["A:13 September","B:14 September", "C:14 July", "D:15 August"],
+                "9: Which country is the largest producer of coffee in the world?": ["A:Brazil", "B:Colombia", "C:Vietnam", "D:Ethiopia"],
+                "10: Where is India Gate located?": ["A:Agra","B:Punjab","C:Mumbai","D:New Delhi"],
                 }
+    i = 0
+    answers = {1:"D", 2:"B", 3:"D",4:"A", 5:"C", 6:"A", 7:"A", 8:"B", 9:"A", 10:"D"}
     for question in questions:
-        print(question)
-        answer = input()
-        if questions[answer] == question:
+        print(question) 
+        print(questions[question]) #prints option
+        i = i + 1
+        user_answer = input("") 
+        if user_answer == answers[i]:
             continue
         else:
-            break
+            print("Wrong Answer!")
             sys.exit()
-
-    for option in option_row_one:
-        print(option.center(40), end=" ")
-    print("\n")
-    for option in option_row_two:
-        print(option.center(40), end=" ")
-    print("\n")
-
-
+ 
 if __name__ == "__main__":
     main()
