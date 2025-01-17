@@ -7,7 +7,7 @@ def main():
     if ans == "code":
         print(code(user_msg))
     elif ans == "decode":
-        decode(user_msg)
+        print(decode(user_msg))
         
 def code(msg):    
     if len(msg) <= 3:
@@ -25,12 +25,9 @@ def decode(msg):
     if len(msg) <= 3:
         return f"{msg[::-1]}"
     elif len(msg) > 3:
-        m = msg[4:len(msg)-3] 
+        m = msg[3:len(msg)-3] 
         last_word = m[len(m)-1]
-        return f"DeCoded Message: {last_word}{m}"
-
-    
-
+        return f"DeCoded Message: {last_word}{m[:len(m)-1]}"
 
 if __name__ == "__main__":
     main()
