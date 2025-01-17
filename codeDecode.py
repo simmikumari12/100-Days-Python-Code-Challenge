@@ -3,13 +3,13 @@ import string
 
 def main():
     ans = input("Code or Decode? ").lower()
+    user_msg = input("Enter your message: ")
     if ans == "code":
-        print(code())
+        print(code(user_msg))
     elif ans == "decode":
-        decode()
+        decode(user_msg)
         
-def code():
-    msg = input("Enter your message: ")
+def code(msg):    
     if len(msg) <= 3:
         return f"{msg[::-1]}"
     elif len(msg) > 3:
@@ -21,8 +21,13 @@ def code():
             random_choice.append(random.choice(characters))
         return f"Coded Message:{random_choice[0]}{random_choice[1]}{random_choice[2]}{coded_value}{first_letter}{random_choice[3]}{random_choice[4]}{random_choice[5]}"
 
-def decode():
-    pass
+def decode(msg):
+    if len(msg) <= 3:
+        return f"{msg[::-1]}"
+    elif len(msg) > 3:
+        m = msg[4:len(msg)-3]
+        print(m)
+    
 
 
 if __name__ == "__main__":
