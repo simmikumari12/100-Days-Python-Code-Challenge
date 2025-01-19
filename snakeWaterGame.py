@@ -1,12 +1,14 @@
 import random 
+from bidict import bidict
 
 
 def main():
-    user = input("Choose between Snake, Gun and Water ").lower()
-    possible_values = {"snake": 1, "water": 2, "gun": 3}
+    user = input("Choose between Snake, Gun and Water\n").lower()
+    possible_values = bidict({"snake": 1, "water": 2, "gun": 3})
     value = possible_values[user]
     machine = random.randint(1,4)
-    print(machine)
+    print("Please Wait Entering My Value:")
+    print(f"{possible_values.inv[machine]}")
 
     if machine == 1: # machine gave snake
         if value == 1:
