@@ -22,7 +22,7 @@ def main():
     else:
         accent = sys.argv[2]
 
-    valid_accent = ["AUS", "IND", "USA"]
+    valid_accent = ["AUS", "IND", "USA", "UK", "French"]
     if accent not in valid_accent:
         print("Invalid 2nd argument. Must be one of IND, AUS, USA")
         sys.exit()
@@ -36,7 +36,28 @@ def main():
         print("Invalid 1st command line argument. Hours cannot be more than 23.")
         sys.exit()
 
-    print(time(hours, minutes))
+    mili_time  = time(hours, minutes)
+    print(mili_time)
+    sound_play(mili_time, accent)
+    
+
+def sound_play(mili_time, a):
+    print(a)
+    dict_tlds = { "AUS": "com.au",
+                   "IND": "co.in",
+                   "USA": "us",
+                   "UK": "co.uk",
+                   "French": "ca"
+
+    }
+    if a != "French":
+        audio = gTTS(text=f"{mili_time}", lang='en', tld = f"{dict_tlds[a]}" )
+    else:
+        audio = gTTS(text=f"{mili_time}", lang='fr', tld = f"{dict_tlds[a]}" )
+    audio.save("f.mp3")
+    return soundplay("./f.mp3")
+
+
 
 def convert_minutes(minutes):
     min_dict = {
