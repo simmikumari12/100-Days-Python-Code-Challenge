@@ -45,8 +45,10 @@ def classifier(my_month, d):
 
 
 
-    if m == 6 :
+    if m == 12 :
         if d < 20:
+            print(f"{my_month} {d} is  spring in the southern hemisphere.")
+        else:
             print(f"{my_month} {d} is  summer in the southern hemisphere.")
 
     if 6 < m < 9: 
