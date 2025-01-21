@@ -4,7 +4,9 @@ def main():
     green = int(input("Enter the Green Color Value: "))
     blue = int(input("Enter the Blue Color Value: "))
     print("CMYK Values")
-    print(RGB_to_CMYK(red, green, blue))
+    my_dict = RGB_to_CMYK(red, green, blue)
+    for key in my_dict:
+        print(f"{key}: {my_dict[key]}")
 
 def RGB_to_CMYK(r, g, b):
     r1 = r/255
