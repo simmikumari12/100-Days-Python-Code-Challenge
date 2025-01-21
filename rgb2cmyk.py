@@ -19,10 +19,10 @@ def RGB_to_CMYK(r, g, b):
     k = round(k1 * 100)
 
     cmyk = {
-        "C": c,
-        "M": m,
-        "Y": y,
-        "K": k
+        "Cyan": c,
+        "Magenta": m,
+        "Yellow": y,
+        "Key (Black)": k
     }
 
     return cmyk
