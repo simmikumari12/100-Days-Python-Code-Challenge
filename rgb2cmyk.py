@@ -1,12 +1,20 @@
+import sys
+
 def main():
-    print("RGB To CMYK Converter")
-    red = int(input("Enter the Red Color Value (enter quit or q to quit): "))
-    green = int(input("Enter the Green Color Value: "))
-    blue = int(input("Enter the Blue Color Value: "))
-    print("CMYK Values")
-    my_dict = RGB_to_CMYK(red, green, blue)
-    for key in my_dict:
-        print(f"{key}: {my_dict[key]}")
+    while True:
+        print("RGB To CMYK Converter")
+        red = input("Enter the Red Color Value (enter quit or q to quit): ")
+        if red == "quit" or red == "q":
+            sys.exit()
+
+        green = int(input("Enter the Green Color Value: "))
+        blue = int(input("Enter the Blue Color Value: "))
+        print("CMYK Values")
+        my_dict = RGB_to_CMYK(int(red), green, blue)
+        for key in my_dict:
+            print(f"{key}: {my_dict[key]}")
+
+        
 
 def RGB_to_CMYK(r, g, b):
     r1 = r/255
