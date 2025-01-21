@@ -1,4 +1,4 @@
-def my_input():
+def main():
     month = input("Please Enter the month: ").title()
     day = input("Please Enter the day: ")
     classifier(month, day)
@@ -55,9 +55,6 @@ def classifier(my_month, d):
     
     if 1 <= m < 3: 
         print(f"{my_month} {d} is summer in the southern hemisphere.")
-    
 
-
-
-
-my_input()
+if __name__ == "__main__":
+    main()
