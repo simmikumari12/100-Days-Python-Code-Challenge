@@ -3,7 +3,7 @@ def my_input():
     day = input("Please Enter the day: ")
     classifier(month, day)
 
-def classifier(my_month, my_day):
+def classifier(my_month, d):
     month = {
         "January": 1,
         "February": 2,
@@ -18,8 +18,17 @@ def classifier(my_month, my_day):
         "November": 11,
         "December": 12
     }
-    if 3<= month[my_month] <=6:
-        print("between March and June")
+    m = month[my_month]
+    
+    if m == 3:
+        if d > 20:
+            print(f"{my_month} {d} is  summer in the southern hemisphere.")
+    if m == 6 :
+        if d < 20:
+            print(f"{my_month} {d} is  summer in the southern hemisphere.")
+
+    if 3 < m < 6: 
+        print(f"{my_month} {d} is  summer in the southern hemisphere.")
 
     print(month[my_month])
     print(type(month[my_month]))
