@@ -13,10 +13,20 @@ def RGB_to_CMYK(r, g, b):
 
     k1 = 1 - max(r1, g1, b1)
 
-    c = ((1 - r1 - k1) * 100) / (1 - k1)
+    c = round(((1 - r1 - k1) * 100) / (1 - k1))
     m = ((1 - g1 - k1) * 100) / (1 - k1)
     y = ((1 - b1 - k1) * 100) / (1 - k1)
     k = k1 * 100
+
+    cmyk = {
+        "C": c,
+        "M": m,
+        "Y": y,
+        "K": k
+    }
+
+    return cmyk
+
 
 
 if __name__ == "__main__":
