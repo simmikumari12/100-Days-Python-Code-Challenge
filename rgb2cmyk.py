@@ -3,7 +3,7 @@ import sys
 def main():
     while True:
         print("RGB To CMYK Converter")
-        red = input("Enter the Red Color Value (enter quit or q to quit): ")
+        red = input("Enter the Red Color Value (enter quit or q to quit): ").lower()
         if red == "quit" or red == "q":
             sys.exit()
 
