@@ -1,6 +1,6 @@
 def main():
     month = input("Please Enter the month: ").title()
-    day = input("Please Enter the day: ")
+    day = int(input("Please Enter the day: "))
     classifier(month, day)
 
 def classifier(my_month, d):
