@@ -6,8 +6,17 @@ def main():
     print("CMYK Values")
     print(RGB_to_CMYK(red, green, blue))
 
-def RGB_to_CMYK():
-    pass
+def RGB_to_CMYK(r, g, b):
+    r1 = r/255
+    g1 = g/255
+    b1 = b/255
+
+    k1 = 1 - max(r1, g1, b1)
+
+    c = ((1 - r1 - k1) * 100) / (1 - k1)
+    m = ((1 - g1 - k1) * 100) / (1 - k1)
+    y = ((1 - b1 - k1) * 100) / (1 - k1)
+
 
 if __name__ == "__main__":
     main()
