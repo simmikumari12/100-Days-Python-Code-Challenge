@@ -30,7 +30,5 @@ def classifier(my_month, d):
     if 3 < m < 6: 
         print(f"{my_month} {d} is  summer in the southern hemisphere.")
 
-    print(month[my_month])
-    print(type(month[my_month]))
 
 my_input()
