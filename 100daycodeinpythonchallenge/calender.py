@@ -18,6 +18,9 @@ def classifier(my_month, my_day):
         "November": 11,
         "December": 12
     }
+    if 3<= month[my_month] <=6:
+        print("between March and June")
+
     print(month[my_month])
     print(type(month[my_month]))
 
