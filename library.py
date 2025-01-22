@@ -16,3 +16,5 @@ class Library:
 
 b = Library(12, ["Physcology of Money", "Power of Subconcious Mind"])
 b.print_books()
+b.add_a_book()
+print(b)
