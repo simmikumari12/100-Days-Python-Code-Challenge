@@ -12,7 +12,7 @@ class Library:
     def add_a_book(self, book):
         self.books.append(book)
         print(book)
-        self.no_of_books = self.books.length
+        self.no_of_books = len(self.books)
          
     def num_books(self):
         print(f"Number of Books: {self.no_of_books}")
