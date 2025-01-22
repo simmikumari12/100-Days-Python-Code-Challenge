@@ -1,16 +1,16 @@
 class Library:
-    def __init__(self, no_of_books, books):
-        self.no_of_books = no_of_books
-        self.books = books
+    def __init__(self):
+        self.no_of_books = 0
+        self.books = []
 
-    def print_books(self):
-
+    def print_books(self, books):
         for book in self.books:
             print(f"Printing Book: {book}")
 
-    def add_a_book(self):
-        print(f"Adding a book: {self.books}")
-
+    def add_a_book(self, book):
+        self.books.append(book)
+        print(book)
+        
     def num_books(self):
         print(f"Number of Books: {self.no_of_books}")
 
