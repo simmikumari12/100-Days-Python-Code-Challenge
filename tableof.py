@@ -1,8 +1,14 @@
 def main():
-    num = int(input("Write table of: "))
+    while True:
+        try:
+            num = int(input("Write table of: "))
+            break
+        except ValueError:
+            print("Invalid Input")
+            
 
-    for i, val in enumerate(range(10), start = 1):
-        print(f"{num} * {i} = {i* num}")
+    for i in range(1, 11):
+        print(f"{num} * {i} = {i * num}")
 
 if __name__ == "__main__":
     main()
