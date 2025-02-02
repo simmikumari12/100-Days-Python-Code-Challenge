@@ -1,10 +1,10 @@
 from functools import reduce
 
 def main():
-    write_in_file()
+    write_to_file()
     read_from_file()
 
-def write_in_file():
+def write_to_file():
     file = open("numbers.txt", "w")
     nums_to_write = input("Give numbers to write: ")
     file.write(nums_to_write)
