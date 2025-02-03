@@ -1,3 +1,2 @@
-for pdf in pdf_files:
-    #     print(pdf)
-    #     merger.append(pdf)
+ Course.__init__()
+    Person.__init__()
