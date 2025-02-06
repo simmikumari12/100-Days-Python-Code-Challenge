@@ -9,6 +9,7 @@ def main():
             remove_from_list(int(sys.argv[2]))
             pass
     read_todo_list()
+    
 # Add Todo
 def add_to_list():
     with open("ToDo.txt", "a") as f:
