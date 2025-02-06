@@ -1,14 +1,14 @@
 import sys 
 
 def main():
-    read_todo_list()
+    create_todo_list()
     if len(sys.argv) == 3:
         if sys.argv[1] == "add":
             add_to_list()
         elif sys.argv[1] == "remove":
             remove_from_list(int(sys.argv[2]))
             pass
-
+    read_todo_list()
 # Add Todo
 def add_to_list():
     with open("ToDo.txt", "a") as f:
@@ -21,44 +21,31 @@ def remove_from_list(n):
         lines = f.readlines()
         print(lines[n + 1])
 
-# Create and Read Todo
+# Create Todo
+def create_todo_list():
+    try:
+        with open("ToDo.txt", "r") as f:
+            pass
+            # print(f.read())
+    except FileNotFoundError:
+        with open("ToDo.txt", "a") as f:
+            f.write("Here's your to do list:\n\n")
+            f.write("1. Ace Resident Assistant Interview\n")
+
+# Read Todo
 def read_todo_list():
     try:
         with open("ToDo.txt", "r") as f:
             print(f.read())
-    except FileNotFoundError:
-        with open("ToDo.txt", "a") as f:
-            f.write("Here's your to do list:\n\n ")
-            f.write("1. Ace Resident Assistant Interview\n")
-
-        with open("commands.txt", "r") as c:
-            print(c.read())
+    except:
+        pass
+    else:
+        with open("todo_commands.txt", "r") as c:
+                print(c.read())
 
 if __name__ == "__main__":
     main()
 
-
-def print_func():
-    for h in todo_heading:
-        print(h)
-    for item in todo_list:
-        print(item)
-    commands = ["\n*******************************************\n",f"To view ToDos: \n{sys.argv[0]}", f"\nTo add a ToDo:\n{sys.argv[0]} add \"Code CS50 Program\"\n", f"\nTo add or complete ToDo:\n{sys.argv[0]} remove 2\n"]
-    for command in commands:
-        print(command)
-
-
-
-
-
-
-
-
-
-
-
-
-# Print List
 
 
 # print("\nHere's your ToDo List:\n")
@@ -70,9 +57,3 @@ def print_func():
 # print("6. Prepare for Summer Confrence Leadership Position Interview")
 # print("8. Prepare for th RA Interview")
 
-#Print Commands
-
-# print("\n*******************************************\n")
-# print(f"To view ToDos: \n{sys.argv[0]}")
-# print(f"\nTo add a ToDo:\n{sys.argv[0]} add \"Code CS50 Program\"\n")
-# print(f"\nTo add or complete ToDo:\n{sys.argv[0]} remove 2\n")
