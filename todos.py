@@ -20,7 +20,7 @@ def add_to_list():
 def remove_from_list(n):
     with open("ToDo.txt", "r") as f:
         lines = f.readlines()
-        
+
         print(lines[n + 1])
 
 # Create Todo
@@ -36,14 +36,11 @@ def create_todo_list():
 
 # Read Todo
 def read_todo_list():
-    try:
-        with open("ToDo.txt", "r") as f:
-            print(f.read())
-    except:
-        pass
-    else:
-        with open("todo_commands.txt", "r") as c:
-                print(c.read())
+    with open("ToDo.txt", "r") as f:
+        print(f.read())
+
+    with open("todo_commands.txt", "r") as c:
+        print(c.read())
 
 if __name__ == "__main__":
     main()
