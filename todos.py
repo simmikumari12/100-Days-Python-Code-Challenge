@@ -1,7 +1,7 @@
 import sys 
 
 def main():
-    # print_func()
+    read_todo_list()
     if len(sys.argv) == 3:
         if sys.argv[1] == "add":
             add_to_list()
@@ -9,19 +9,30 @@ def main():
             remove_from_list(int(sys.argv[2]))
             pass
 
-todo_heading = ["Here's your ToDo List:\n\n","1. Ace Resident Assistant Interview\n"]
-
 # Add Todo
 def add_to_list():
-    with open("list.txt", "a") as f:
+    with open("ToDo.txt", "a") as f:
         f.write("\n")
         f.write(sys.argv[2])
 
 # Remove Todo
 def remove_from_list(n):
-    with open("list.txt", "r") as f:
+    with open("ToDo.txt", "r") as f:
         lines = f.readlines()
         print(lines[n + 1])
+
+# Create and Read Todo
+def read_todo_list():
+    try:
+        with open("ToDo.txt", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        with open("ToDo.txt", "a") as f:
+            f.write("Here's your to do list:\n\n ")
+            f.write("1. Ace Resident Assistant Interview\n")
+
+        with open("commands.txt", "r") as c:
+            print(c.read())
 
 if __name__ == "__main__":
     main()
