@@ -1,6 +1,9 @@
 import sys 
+import os
 
+file_name = "ToDo.txt"
 def main():
+    
     create_todo_list()
     if len(sys.argv) == 3:
         if sys.argv[1] == "add":
@@ -10,33 +13,42 @@ def main():
             pass
     read_todo_list()
 
-# Add Todo
-def add_to_list():
-    with open("ToDo.txt", "a") as f:
-        f.write("\n")
-        f.write(sys.argv[2])
-
-# Remove Todo
-def remove_from_list(n):
-    with open("ToDo.txt", "r") as f:
-        lines = f.readlines()
-
-        print(lines[n + 1])
-
 # Create Todo
 def create_todo_list():
     try:
-        with open("ToDo.txt", "r") as f:
-            pass
-            # print(f.read())
+        with open(file_name, "r") as f:
+            lines = f.readlines()
+            num_lines = len(lines)
     except FileNotFoundError:
-        with open("ToDo.txt", "a") as f:
+        with open(file_name, "a") as f:
             f.write("Here's your to do list:\n\n")
-            f.write("1. Ace Resident Assistant Interview\n")
+            f.write("1. Ace Resident Assistant Interview")
+    else:
+        if num_lines == 0:
+            with open(file_name, "a") as f:
+                f.write("Here's your to do list:\n\n")
+                f.write("1. Ace Resident Assistant Interview")
+
+
+# Add Todo
+def add_to_list():
+    with open(file_name, "a") as f:
+        f.write(f"{sys.argv[2]}\n")
+
+# Remove Todo
+def remove_from_list(n):
+    try:
+        with open(file_name, "r") as f:
+            lines = f.readlines()
+            del lines[n+1]
+        with open(file_name, "a"):
+                f.writelines(lines)     
+    except:
+        print(f"Nothing at {n+1} to remove")
 
 # Read Todo
 def read_todo_list():
-    with open("ToDo.txt", "r") as f:
+    with open(file_name, "r") as f:
         print(f.read())
 
     with open("todo_commands.txt", "r") as c:
