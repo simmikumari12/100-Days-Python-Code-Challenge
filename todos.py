@@ -2,19 +2,26 @@ import sys
 
 def main():
     # print_func()
-    if len(sys.argv) == 3 and sys.argv[1] == "add":
-        add_to_list()
+    if len(sys.argv) == 3:
+        if sys.argv[1] == "add":
+            add_to_list()
+        elif sys.argv[1] == "remove":
+            remove_from_list(int(sys.argv[2]))
+            pass
 
 todo_heading = ["Here's your ToDo List:\n\n","1. Ace Resident Assistant Interview\n"]
-with open("list.txt", "w") as f:
-    for h in todo_heading:
-        f.write(h)
 
 # Add Todo
 def add_to_list():
-    with open("try.txt", "a") as f:
+    with open("list.txt", "a") as f:
         f.write("\n")
         f.write(sys.argv[2])
+
+# Remove Todo
+def remove_from_list(n):
+    with open("list.txt", "r") as f:
+        lines = f.readlines()
+        print(lines[n + 1])
 
 if __name__ == "__main__":
     main()
