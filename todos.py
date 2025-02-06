@@ -9,7 +9,7 @@ def main():
             remove_from_list(int(sys.argv[2]))
             pass
     read_todo_list()
-    
+
 # Add Todo
 def add_to_list():
     with open("ToDo.txt", "a") as f:
@@ -20,6 +20,7 @@ def add_to_list():
 def remove_from_list(n):
     with open("ToDo.txt", "r") as f:
         lines = f.readlines()
+        
         print(lines[n + 1])
 
 # Create Todo
