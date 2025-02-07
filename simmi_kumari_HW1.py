@@ -16,7 +16,8 @@ class Car(Location):
         return f"[{self.car_name}, {self.location}, {self.cost_per_mile}]"
     
     def move_to(self,new_x, new_y):
-        return Location.__init__(new_x,new_y)
+       self.location = f"({new_y}, {new_y})"
+       return self.location
 
 class Passenger(Location):
     def __init__(self, passenger_name, location):
@@ -30,7 +31,26 @@ class Passenger(Location):
         return Location.__init__(new_x,new_y)
 
 
-class RideSharingApp:
+class RideSharingApp(Car): 
     def __init__(self):
-        cars = []
-        passengers = []
+        self.cars = []
+        self.passengers = []
+
+    def add_car(self, car):
+        return self.cars.append(car)
+    
+    def add_passenger(self, passenger):
+        return self.passengers.append(passenger)
+    
+    def remove_car(self, car):
+        return self.cars.pop(car)
+    
+    def remove_passenger(self, passenger):
+        return self.passengers.pop(passenger)        
+
+    def find_cheapest_car(self):
+        return min(self.cost_per_mile)
+    
+    def find_nearest_car(self, passenger):
+        pass
+
