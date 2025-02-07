@@ -12,8 +12,6 @@ class Car:
         self.cost_per_mile = cost_per_mile
         Location.__init__(self, location)
         
-
-
 class Passenger:
     pass
 
