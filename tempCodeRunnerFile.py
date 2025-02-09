@@ -1,2 +1,1 @@
- Course.__init__()
-    Person.__init__()
+self.car_name
