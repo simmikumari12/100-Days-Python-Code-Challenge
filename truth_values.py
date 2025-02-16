@@ -2,8 +2,8 @@ import sys
 
 def main():
 
-    truth_values = ["True", "False"]
     print("\n")
+    truth_values = ["True", "False"]
     p = input("Truth value for p: ").title()
     if p not in truth_values:
         sys.exit("Invalid Truth for 'p'")
