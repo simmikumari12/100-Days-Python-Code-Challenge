@@ -29,9 +29,12 @@ points_ls = {
 points = 0
 while True:
     data = input().upper()
-    if data == "quit" or "q":
+    if data == "QUIT" or data == "Q":
         break
-for char in data:
-    points = points + points_ls[char]
 
-print(f"{data} is worth {points} points.")
+    for char in data:
+            points = points + points_ls[char]
+
+    print(f"{data} is worth {points} points.") 
+    points = 0
+    
