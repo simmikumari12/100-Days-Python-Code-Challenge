@@ -21,7 +21,7 @@ def convert(fraction):
   except ZeroDivisionError:
     sys.exit()
 
-  return percen
+  return round(percen)
 
 def gauge(percentage):
   if percentage <= 1:
@@ -31,5 +31,5 @@ def gauge(percentage):
   else:
     return f"{percentage}%"
 
-
-main()
+if __name__ == "__main__":
+    main()
