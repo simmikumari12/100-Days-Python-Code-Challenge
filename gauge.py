@@ -14,14 +14,19 @@ def convert(fraction):
     sys.exit()
 
   if x > y:
-    raise ValueError(sys.exit())
+    if y == 0:
+      raise ZeroDivisionError()
+    else:
+        raise ValueError()
+    
     
   try:
     percen = (x/y)*100
-  except ZeroDivisionError:
-    sys.exit()
-
-  return round(percen)
+  except ZeroDivisionError as e:
+    raise ZeroDivisionError()
+  
+  else:
+    return round(percen)
 
 def gauge(percentage):
   if percentage <= 1:
