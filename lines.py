@@ -11,9 +11,14 @@ def main():
     if not (sys.argv[1].endswith(".py")):
         sys.exit("Not a valid python file.")
 
-    
-    print(num_lines(sys.argv[1]))
+    try:
+        with open(sys.argv[1], "r") as f:
+            ...
+    except FileNotFoundError:
+        sys.exit("File does not exist.")
 
+
+    print(num_lines(sys.argv[1]))
 
 def num_lines(my_file):
     ...
