@@ -17,3 +17,7 @@ def main():
 
 def num_lines(my_file):
     ...
+
+
+if __name__ == "__main__":
+    main()
