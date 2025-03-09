@@ -1,6 +1,10 @@
 import sys
 
 def main():
+    valid_input()
+    print(num_lines(sys.argv[1]))
+
+def valid_input():
 
     l = len(sys.argv)
     if l > 2:
@@ -16,9 +20,8 @@ def main():
             ...
     except FileNotFoundError:
         sys.exit("File does not exist.")
-
-
-    print(num_lines(sys.argv[1]))
+    
+    
 
 def num_lines(my_file):
     count = 0
