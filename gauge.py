@@ -10,8 +10,8 @@ def convert(fraction):
     num, denom = fraction.split("/")
     x = int(num)
     y = int(denom)
-  except ValueError:
-    sys.exit()
+  except ValueError as e:
+    raise e
 
   if x > y:
     if y == 0:
@@ -23,7 +23,7 @@ def convert(fraction):
   try:
     percen = (x/y)*100
   except ZeroDivisionError as e:
-    raise ZeroDivisionError()
+    raise e
   
   else:
     return round(percen)
