@@ -21,7 +21,13 @@ def main():
     print(num_lines(sys.argv[1]))
 
 def num_lines(my_file):
-    ...
+    count = 0
+    with open(my_file, "r") as f:
+        for line in f:
+            if (not (line.startswith("#"))) and (len(line.strip()) != 0):
+                count = count + 1
+    return count
+
 
 
 if __name__ == "__main__":
