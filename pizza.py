@@ -27,3 +27,8 @@ def my_table(my_file):
         content = csv.DictReader(file)
         header = content.fieldnames
     return tabulate(content, header, tablefmt = "grid")
+
+
+
+if __name__ == "__main__":
+    main()
