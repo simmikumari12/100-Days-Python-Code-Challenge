@@ -13,7 +13,14 @@ def valid_input():
     if l < 2:
         sys.exit("Too Few Command Line Arguments")
 
-    
+    if not sys.argv[1].endswith(".csv"):
+        sys.exit("Not a CSV file.")
+
+    try:
+        with open(sys.argv[1], "r") as f:
+            ...
+    except FileNotFoundError:
+        sys.exit("File does not exist.")
 
 
 
