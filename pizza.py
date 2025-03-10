@@ -22,7 +22,8 @@ def valid_input():
     except FileNotFoundError:
         sys.exit("File does not exist.")
 
-
-
 def my_table(my_file):
-    ...
+    with open(my_file, "r") as file:
+        content = csv.DictReader(file)
+        header = content.fieldnames
+    return tabulate(content, header, tablefmt = "grid")
