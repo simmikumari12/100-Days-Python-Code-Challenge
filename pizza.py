@@ -24,7 +24,6 @@ def valid_input():
 
 def my_table(my_file):
     menu = []
-    table = []
     with open(my_file, "r") as file:
         items = csv.reader(file)
 
