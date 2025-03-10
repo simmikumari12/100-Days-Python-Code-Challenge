@@ -23,12 +23,15 @@ def valid_input():
         sys.exit("File does not exist.")
 
 def my_table(my_file):
+    menu = []
+    table = []
     with open(my_file, "r") as file:
-        content = csv.DictReader(file)
-        header = content.fieldnames
-    return tabulate(content, header, tablefmt = "grid")
+        items = csv.reader(file)
 
-
+        for item in items:
+            menu.append(item)
+       
+    return tabulate.tabulate(menu[1:], menu[0], tablefmt = "grid")
 
 if __name__ == "__main__":
     main()
